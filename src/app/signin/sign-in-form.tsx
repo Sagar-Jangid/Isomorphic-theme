@@ -11,8 +11,9 @@ import { routes } from '@/config/routes';
 import { loginSchema, LoginSchema } from '@/validators/login.schema';
 
 const initialValues: LoginSchema = {
-  email: 'admin@admin.com',
-  password: 'admin',
+  mobile: '',
+  password: '',
+  lpassword:'',
   rememberMe: true,
 };
 
@@ -40,14 +41,14 @@ export default function SignInForm() {
         {({ register, formState: { errors } }) => (
           <div className="space-y-5">
             <Input
-              type="email"
+              type="number"
               size="lg"
-              label="Email"
-              placeholder="Enter your email"
+              label="Moblie"
+              placeholder="Enter your number"
               className="[&>label>span]:font-medium"
               inputClassName="text-sm"
-              {...register('email')}
-              error={errors.email?.message}
+              {...register('mobile')}
+              error={errors.mobile?.message}
             />
             <Password
               label="Password"
@@ -56,6 +57,15 @@ export default function SignInForm() {
               className="[&>label>span]:font-medium"
               inputClassName="text-sm"
               {...register('password')}
+              error={errors.password?.message}
+            />
+             <Password
+              label="Pin"
+              placeholder="Enter your pin"
+              size="lg"
+              className="[&>label>span]:font-medium"
+              inputClassName="text-sm"
+              {...register('lpassword')}
               error={errors.password?.message}
             />
             <div className="flex items-center justify-between pb-2">

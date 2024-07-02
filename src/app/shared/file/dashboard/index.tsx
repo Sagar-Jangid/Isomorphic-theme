@@ -10,8 +10,12 @@ import Members from '@/app/shared/file/dashboard/members';
 import FileListTable from '@/app/shared/file/dashboard/file-list/table';
 import UpgradeStorage from '@/app/shared/file/dashboard/upgrade-storage';
 import RecentActivities from '@/app/shared/file/dashboard/recent-activities';
+import { useSession } from 'next-auth/react'
 
 export default function FileDashboard() {
+  console.log("working")
+  const { data: session } = useSession();
+  console.log({session})
   return (
     <div className="@container">
       <FileStats className="mb-5 2xl:mb-8" />

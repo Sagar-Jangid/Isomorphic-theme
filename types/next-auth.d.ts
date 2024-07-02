@@ -3,10 +3,7 @@ import 'next-auth/jwt';
 
 declare module 'next-auth' {
   interface Session {
-    user: {
-      id: string;
-      // currentTeamId: string | null;
-    } & DefaultSession['user'];
+    user: any;
   }
 }
 

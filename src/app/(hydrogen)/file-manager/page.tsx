@@ -31,6 +31,7 @@ const pageHeader = {
 };
 
 export default function FileListPage() {
+  console.log("working")
   return (
     <>
       <PageHeader title={pageHeader.title} breadcrumb={pageHeader.breadcrumb}>
